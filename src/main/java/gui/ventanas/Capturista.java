@@ -860,21 +860,21 @@ public class Capturista extends javax.swing.JFrame {
         } else {
 
             int idCliente = Consultar.ConsultarIdCliente(nombreCliente);
-
             if (idCliente == 0) {
-
-                Registrar.RegistrarCliente(nombreCliente, telefono);
-                Registrar.RegistrarEquipo(Consultar.ConsultarUltimoCliente(), new String[]{tipo_equipo, marca, modelo, numeroSerie,
-                    Utilidades.getDia(), Utilidades.getMes(), Utilidades.getAnnio(), Utilidades.HoraActual(), observaciones, estatus});
-
+                idCliente = Registrar.RegistrarCliente(nombreCliente, telefono);
+                if (idCliente == 0) {
+                    return;
+                }
             } else {
-
                 Actualizar.ActualizarInfoCliente(idCliente, new String[]{nombreCliente, telefono});
-                Registrar.RegistrarEquipo(idCliente, new String[]{tipo_equipo, marca, modelo, numeroSerie,
-                    Utilidades.getDia(), Utilidades.getMes(), Utilidades.getAnnio(), Utilidades.HoraActual(), observaciones, estatus});
-
             }
-            LlenarOrden(new String[]{String.valueOf(Consultar.ConsultarUltimoEquipo()), fechaHora, nombreCliente, telefono, numeroSerie, tipo_equipo, marca, modelo, observaciones});
+
+            int folio = Registrar.RegistrarEquipo(idCliente, new String[]{tipo_equipo, marca, modelo, numeroSerie,
+                Utilidades.getDia(), Utilidades.getMes(), Utilidades.getAnnio(), Utilidades.HoraActual(), observaciones, estatus});
+            if (folio == 0) {
+                return;
+            }
+            LlenarOrden(new String[]{String.valueOf(folio), fechaHora, nombreCliente, telefono, numeroSerie, tipo_equipo, marca, modelo, observaciones});
         }
     }//GEN-LAST:event_jButton_RegistrarEquipoActionPerformed
 
@@ -1203,7 +1203,9 @@ public class Capturista extends javax.swing.JFrame {
         try {
             orden.LlenarOrden();
         } catch (JRException ex) {
-            System.err.println("Error al llenar la informacion del ticket " + ex);
+            JOptionPane.showMessageDialog(this, "No se pudo generar la orden de servicio: " + ex.getMessage(),
+                    "Error de reporte", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         txt_NombreCliente.setText("");
         txt_TelefonoCliente.setText("");

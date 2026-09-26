@@ -263,7 +263,11 @@ public class InfoEquipo extends javax.swing.JDialog {
 
         infoCliente = Consultar.ConsultarInfoCliente(Consultar.ConsultarIdCliente(idEquipo));
         infoEquipo = Consultar.ConsultarInfoEquipo(idEquipo);
-
+        if (infoCliente == null || infoEquipo == null) {
+            JOptionPane.showMessageDialog(this, "No se encontraron los datos del cliente o del equipo para la orden.",
+                    "Orden de servicio", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         ordenServicio.setFolio(String.valueOf(idEquipo));
         ordenServicio.setFechaHora(infoEquipo[4] + " " + infoEquipo[5]);
         ordenServicio.setNombreCliente(infoCliente[0]);
@@ -278,7 +282,8 @@ public class InfoEquipo extends javax.swing.JDialog {
         try {
             ordenServicio.LlenarOrden();
         } catch (JRException ex) {
-            System.err.println("Error al llenar la informacion del ticket " + ex);
+            JOptionPane.showMessageDialog(this, "No se pudo generar la orden de servicio: " + ex.getMessage(),
+                    "Error de reporte", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton_GenerarTicketActionPerformed
 

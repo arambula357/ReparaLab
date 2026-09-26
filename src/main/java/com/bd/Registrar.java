@@ -67,62 +67,66 @@ public class Registrar {
         }
     }
 
-    public static void RegistrarCliente(String nombreCliente, String telefono) {
-        try {
-            try ( Connection cn = Conexion.getConexion()) {
-                PreparedStatement pst = cn.prepareStatement("insert into clientes values (?,?,?,?)");
-
-                pst.setInt(1, 0);
-                pst.setString(2, nombreCliente);
-                pst.setString(3, telefono);
-                pst.setString(4, Utilidades.getUsuarioActivo());
-
-                pst.executeUpdate();
+    public static int RegistrarCliente(String nombreCliente, String telefono) {
+        try (Connection cn = Conexion.getConexion();
+                PreparedStatement pst = cn.prepareStatement(
+                        "insert into clientes (nombre_cliente, tel_cliente, ultima_modificacion) values (?,?,?)",
+                        Statement.RETURN_GENERATED_KEYS)) {
+            pst.setString(1, nombreCliente);
+            pst.setString(2, telefono);
+            pst.setString(3, Utilidades.getUsuarioActivo());
+            if (pst.executeUpdate() != 1) {
+                throw new SQLException("No se registró el cliente");
             }
-
+            try (ResultSet keys = pst.getGeneratedKeys()) {
+                if (keys.next()) {
+                    return keys.getInt(1);
+                }
+            }
+            throw new SQLException("No se obtuvo el ID del cliente registrado");
         } catch (SQLException e) {
             System.out.println("Error en registrar cliente en la base de datos: " + e.getMessage());
             JOptionPane.showMessageDialog(null, "Error en registrar cliente en la base de datos,\n"
-                    + "Revisa tu conexión a internet o llama al administrador,\n"
-                    + "Error: " + e.getMessage(),
-                    "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+                    + "Revisa la conexión a la base de datos.\n"
+                    + "Error: " + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        return 0;
     }
 
-    public static void RegistrarEquipo(int idCliente, String[] infoEquipo) {
-        try {
-            try ( Connection cn = Conexion.getConexion()) {
-                PreparedStatement pst = cn.prepareStatement("insert into equipos values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-
-                pst.setInt(1, 0);
-                pst.setInt(2, idCliente);
-                pst.setString(3, infoEquipo[0]);
-                pst.setString(4, infoEquipo[1]);
-                pst.setString(5, infoEquipo[2]);
-                pst.setString(6, infoEquipo[3]);
-                pst.setString(7, infoEquipo[4]);
-                pst.setString(8, infoEquipo[5]);
-                pst.setString(9, infoEquipo[6]);
-                pst.setString(10, infoEquipo[7]);
-                pst.setString(11, infoEquipo[8]);
-                pst.setString(12, infoEquipo[9]);
-                pst.setString(13, Utilidades.getUsuarioActivo());
-                pst.setString(14, "");
-                pst.setString(15, "");
-
-                pst.executeUpdate();
+    public static int RegistrarEquipo(int idCliente, String[] infoEquipo) {
+        if (infoEquipo == null || infoEquipo.length != 10) {
+            throw new IllegalArgumentException("Se esperan diez datos del equipo");
+        }
+        try (Connection cn = Conexion.getConexion();
+                PreparedStatement pst = cn.prepareStatement(
+                        "insert into equipos (id_cliente, tipo_equipo, marca, modelo, num_serie, "
+                        + "dia_ingreso, mes_ingreso, annio_ingreso, hora_ingreso, observaciones, "
+                        + "estatus, ultima_modificacion, comentarios_tecnicos, revision_tecnica_de) "
+                        + "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        Statement.RETURN_GENERATED_KEYS)) {
+            pst.setInt(1, idCliente);
+            for (int i = 0; i < 10; i++) {
+                pst.setString(i + 2, infoEquipo[i]);
             }
-
+            pst.setString(12, Utilidades.getUsuarioActivo());
+            pst.setString(13, "");
+            pst.setString(14, "");
+            if (pst.executeUpdate() != 1) {
+                throw new SQLException("No se registró el equipo");
+            }
+            try (ResultSet keys = pst.getGeneratedKeys()) {
+                if (keys.next()) {
+                    return keys.getInt(1);
+                }
+            }
+            throw new SQLException("No se obtuvo el ID del equipo registrado");
         } catch (SQLException e) {
             System.out.println("Error en registrar equipo en la base de datos: " + e.getMessage());
             JOptionPane.showMessageDialog(null, "Error en registrar equipo en la base de datos,\n"
-                    + "Revisa tu conexión a internet o llama al administrador,\n"
-                    + "Error: " + e.getMessage(),
-                    "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
-
+                    + "Revisa la conexión a la base de datos.\n"
+                    + "Error: " + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        return 0;
     }
 
     public static void RegistrarProducto(String[] info) {
