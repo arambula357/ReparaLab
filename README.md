@@ -17,6 +17,7 @@ La aplicaci?n tambi?n genera ?rdenes de servicio, tickets y PDF. No se a?adieron
 ## Tecnolog?a
 
 - Java 25 como nivel de compilaci?n y Swing con formularios de NetBeans
+- [Alcance y validacion de la migracion a Java 25](docs/java-25-upgrade.md)
 - Maven
 - MySQL Connector/J 8.4
 - JasperReports 7.0.8 para ?rdenes de servicio
