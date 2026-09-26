@@ -16,7 +16,7 @@ La aplicaci?n tambi?n genera ?rdenes de servicio, tickets y PDF. No se a?adieron
 
 ## Tecnolog?a
 
-- Java 8 como nivel de compilaci?n y Swing con formularios de NetBeans
+- Java 25 como nivel de compilaci?n y Swing con formularios de NetBeans
 - Maven
 - MySQL Connector/J 8.4
 - JasperReports 7.0.8 para ?rdenes de servicio
@@ -26,7 +26,7 @@ La plantilla JRXML se adapt? a JasperReports 7 para incorporar la correcci?n de 
 
 ## Ejecutar una demostraci?n local
 
-Requiere JDK 8 o posterior, Maven 3.9.12 o posterior y una instancia local de MySQL 8. El esquema de database/demo.sql fue reconstruido a partir del c?digo para esta demostraci?n y contiene solamente datos ficticios.
+Requiere JDK 25 o posterior, Maven 3.9.12 o posterior y una instancia local de MySQL 8. El esquema de database/demo.sql fue reconstruido a partir del c?digo para esta demostraci?n y contiene solamente datos ficticios.
 
 1. Importa database/demo.sql en MySQL. Crea un usuario local con permisos sobre reparalab_demo.
 2. Configura las variables de entorno de la aplicaci?n. Por ejemplo, en PowerShell:
