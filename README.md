@@ -62,3 +62,9 @@ El dise?o original conserva decisiones de una aplicaci?n temprana, como SQL en c
 ## Autor
 
 Diego Arambula.
+
+## Licencia
+
+ReparaLab se distribuye bajo la GNU Affero General Public License version 3 (AGPLv3). Consulta [LICENSE](LICENSE) para el texto completo. Esta licencia permite usar iText 5 bajo su modalidad de codigo abierto, siempre que se cumplan sus condiciones al distribuir la aplicacion.
+
+Las dependencias conservan sus propias licencias y avisos. iText 5 utiliza AGPLv3; JasperReports Library declara LGPL; MySQL Connector/J 8.4.0 declara GPLv2 con Universal FOSS Exception 1.0. Si distribuyes los archivos de `target/lib/`, incluye tambien los avisos de licencia correspondientes a esas bibliotecas.
