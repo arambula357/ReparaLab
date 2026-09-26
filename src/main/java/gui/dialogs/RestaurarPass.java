@@ -40,7 +40,6 @@ public class RestaurarPass extends javax.swing.JDialog {
         return retValue;
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -104,8 +103,8 @@ public class RestaurarPass extends javax.swing.JDialog {
     private void jButton_RestaurarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RestaurarPasswordActionPerformed
         String password, confirmacion_password;
 
-        password = txt_Password.getText().trim();
-        confirmacion_password = txt_PasswordConfirmacion.getText().trim();
+        password = new String(txt_Password.getPassword()).trim();
+        confirmacion_password = new String(txt_PasswordConfirmacion.getPassword()).trim();
 
         if (!password.equals("") && !confirmacion_password.equals("")) {
             if (password.equals(confirmacion_password)) {

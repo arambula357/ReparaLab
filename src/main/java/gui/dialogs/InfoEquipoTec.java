@@ -3,13 +3,11 @@ package gui.dialogs;
 import com.bd.Actualizar;
 import com.bd.Consultar;
 import com.construir.Imagenes;
-import com.TicketRecepcion;
 import com.utilidades.Utilidades;
 
 import java.awt.Image;
 import java.awt.Toolkit;
 
-import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -56,7 +54,6 @@ public class InfoEquipoTec extends javax.swing.JDialog {
         return retValue;
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

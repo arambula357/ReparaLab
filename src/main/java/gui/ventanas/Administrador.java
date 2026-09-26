@@ -71,7 +71,6 @@ public class Administrador extends javax.swing.JFrame {
         return retValue;
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -1191,7 +1190,7 @@ public class Administrador extends javax.swing.JFrame {
         String mail = txt_Mail.getText().trim();
         String telefono = txt_Telefono.getText().trim();
         String usuario = txt_Usuario.getText().trim();
-        String pass = txt_Password.getText().trim();
+        String pass = new String(txt_Password.getPassword()).trim();
         String permisos = cmb_Permisos.getSelectedItem().toString();
 
         if (nombre.equals("") || mail.equals("") || telefono.equals("")

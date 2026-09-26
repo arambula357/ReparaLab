@@ -5,7 +5,6 @@ import com.bd.Consultar;
 import com.bd.Actualizar;
 import com.construir.Imagenes;
 import com.construir.Tablas;
-import com.utilidades.Utilidades;
 
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
@@ -45,7 +44,6 @@ public class InfoCliente extends javax.swing.JDialog {
         initComponents();
         this.idCliente = idCliente;
         this.info = Consultar.ConsultarInfoCliente(idCliente);
-        this.usuario = Utilidades.getUsuarioActivo();
         setSize(640, 480);
         setTitle("Información de cliente");
         setResizable(false);
@@ -69,7 +67,6 @@ public class InfoCliente extends javax.swing.JDialog {
         return retValue;
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -385,7 +382,6 @@ public class InfoCliente extends javax.swing.JDialog {
 
     private DefaultTableModel modelEquipos;
 
-    private String usuario;
     private String[] info;
     private int idCliente;
 }

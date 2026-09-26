@@ -20,27 +20,27 @@
   <detail>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="14.0" textAdjust="StretchHeight">
-        <expression>$P{empresa}</expression>
+        <expression>java.util.Optional.ofNullable($P{empresa}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="10.0" textAdjust="StretchHeight">
-        <expression>$P{propietario}</expression>
+        <expression>java.util.Optional.ofNullable($P{propietario}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"RFC: " + $P{rfc}</expression>
+        <expression>"RFC: " + java.util.Optional.ofNullable($P{rfc}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>$P{direccion}</expression>
+        <expression>java.util.Optional.ofNullable($P{direccion}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Teléfono: " + $P{telefono}</expression>
+        <expression>"Teléfono: " + java.util.Optional.ofNullable($P{telefono}).orElse("")</expression>
       </element>
     </band>
     <band height="20" splitType="Stretch">
@@ -50,22 +50,22 @@
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="10.0" textAdjust="StretchHeight">
-        <expression>"Folio: " + $P{folio}</expression>
+        <expression>"Folio: " + java.util.Optional.ofNullable($P{folio}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Fecha: " + $P{fechaHora}</expression>
+        <expression>"Fecha: " + java.util.Optional.ofNullable($P{fechaHora}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Cliente: " + $P{nombreCliente}</expression>
+        <expression>"Cliente: " + java.util.Optional.ofNullable($P{nombreCliente}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Teléfono cliente: " + $P{contactoCliente}</expression>
+        <expression>"Teléfono cliente: " + java.util.Optional.ofNullable($P{contactoCliente}).orElse("")</expression>
       </element>
     </band>
     <band height="20" splitType="Stretch">
@@ -75,22 +75,22 @@
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Tipo de equipo: " + $P{tipoEquipo}</expression>
+        <expression>"Tipo de equipo: " + java.util.Optional.ofNullable($P{tipoEquipo}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Marca: " + $P{marca}</expression>
+        <expression>"Marca: " + java.util.Optional.ofNullable($P{marca}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Modelo: " + $P{modelo}</expression>
+        <expression>"Modelo: " + java.util.Optional.ofNullable($P{modelo}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"No. de serie: " + $P{numeroSerie}</expression>
+        <expression>"No. de serie: " + java.util.Optional.ofNullable($P{numeroSerie}).orElse("")</expression>
       </element>
     </band>
     <band height="20" splitType="Stretch">
@@ -100,7 +100,7 @@
     </band>
     <band height="92" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="90" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>$P{observaciones}</expression>
+        <expression>java.util.Optional.ofNullable($P{observaciones}).orElse("")</expression>
       </element>
     </band>
     <band height="20" splitType="Stretch">
@@ -110,18 +110,18 @@
     </band>
     <band height="92" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="90" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>$P{condiciones}</expression>
+        <expression>java.util.Optional.ofNullable($P{condiciones}).orElse("")</expression>
       </element>
     </band>
     <band height="18" />
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Recibió: " + $P{vendedor}</expression>
+        <expression>"Recibió: " + java.util.Optional.ofNullable($P{vendedor}).orElse("")</expression>
       </element>
     </band>
     <band height="22" splitType="Stretch">
       <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
-        <expression>"Conformidad: " + $P{conformidad}</expression>
+        <expression>"Conformidad: " + java.util.Optional.ofNullable($P{conformidad}).orElse("")</expression>
       </element>
     </band>
   </detail>

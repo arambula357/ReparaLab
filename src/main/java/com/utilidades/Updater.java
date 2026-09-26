@@ -2,7 +2,6 @@ package com.utilidades;
 
 import java.awt.Desktop;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -17,15 +16,15 @@ import java.util.logging.Logger;
  */
 public class Updater {
 
+    private static final URI VERSION_URI = URI.create("https://raw.githubusercontent.com/arambula357/ReparaLab/main/version.txt");
+
     // Método para verificar si existe una conexión a internet estable.
     public static boolean ConfirmarConexion() {
         try {
-            URL urlConfirmar = new URL("https://raw.githubusercontent.com/arambula357/ReparaLab/main/version.txt");
+            URL urlConfirmar = VERSION_URI.toURL();
             URLConnection con = urlConfirmar.openConnection();
             con.connect();
             return true;
-        } catch (MalformedURLException ex) {
-//            System.err.println("Error en url: " + ex.getMessage());
         } catch (IOException ex) {
 //            System.err.println("Error en la conexión: " + ex.getMessage());
         }
@@ -38,12 +37,10 @@ public class Updater {
      */
     public static String ObtenerVersion() {
         try {
-            URL urlVerificar = new URL("https://raw.githubusercontent.com/arambula357/ReparaLab/main/version.txt");
+            URL urlVerificar = VERSION_URI.toURL();
             URLConnection con = urlVerificar.openConnection();
             con.connect();
             return ObtenerContenidoUrlVersion(urlVerificar);
-        } catch (MalformedURLException ex) {
-//            System.err.println("Error en url: " + ex.getMessage());
         } catch (IOException ex) {
 //            System.err.println("Error en la conexión: " + ex.getMessage());
         }
@@ -55,9 +52,9 @@ public class Updater {
      */
     public static String ObtenerContenidoUrlVersion(URL urlVerificar) {
         try {
-            Scanner s = new Scanner(urlVerificar.openStream()).useDelimiter("\\Z");
-            String contenido = s.next();
-            return contenido;
+            try (Scanner scanner = new Scanner(urlVerificar.openStream(), java.nio.charset.StandardCharsets.UTF_8).useDelimiter("\\Z")) {
+                return scanner.hasNext() ? scanner.next() : null;
+            }
         } catch (IOException ex) {
             Logger.getLogger(Updater.class.getName()).log(Level.SEVERE, null, ex);
         }

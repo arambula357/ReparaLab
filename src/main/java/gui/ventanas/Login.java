@@ -42,7 +42,6 @@ public class Login extends javax.swing.JFrame {
         return retValue;
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -111,7 +110,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton_AccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AccederActionPerformed
         user = txt_User.getText().trim();
-        pass = txt_Password.getText().trim();
+        pass = new String(txt_Password.getPassword()).trim();
         if (!user.equals("") && !pass.equals("")) {
 
             info = Consultar.ConsultarAcceso(user, pass);
@@ -178,7 +177,7 @@ public class Login extends javax.swing.JFrame {
             public void keyReleased(KeyEvent evt) {
                 if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
                     user = txt_User.getText().trim();
-                    pass = txt_Password.getText().trim();
+                    pass = new String(txt_Password.getPassword()).trim();
                     if (!user.equals("") && !pass.equals("")) {
 
                         info = Consultar.ConsultarAcceso(user, pass);
