@@ -1,0 +1,86 @@
+<jasperReport name="OrdenServicio" pageWidth="226" pageHeight="800" columnWidth="198" leftMargin="14" rightMargin="14" topMargin="10" bottomMargin="10" uuid="720fcf1e-2ab9-4237-a98f-c972545b2595">
+  <parameter name="empresa" class="java.lang.String"/>
+  <parameter name="propietario" class="java.lang.String"/>
+  <parameter name="rfc" class="java.lang.String"/>
+  <parameter name="direccion" class="java.lang.String"/>
+  <parameter name="telefono" class="java.lang.String"/>
+  <parameter name="folio" class="java.lang.String"/>
+  <parameter name="fechaHora" class="java.lang.String"/>
+  <parameter name="nombreCliente" class="java.lang.String"/>
+  <parameter name="contactoCliente" class="java.lang.String"/>
+  <parameter name="tipoEquipo" class="java.lang.String"/>
+  <parameter name="marca" class="java.lang.String"/>
+  <parameter name="modelo" class="java.lang.String"/>
+  <parameter name="numeroSerie" class="java.lang.String"/>
+  <parameter name="observaciones" class="java.lang.String"/>
+  <parameter name="condiciones" class="java.lang.String"/>
+  <parameter name="vendedor" class="java.lang.String"/>
+  <parameter name="conformidad" class="java.lang.String"/>
+  <detail>
+    <band height="700">
+      <element kind="staticText" x="0" y="116" width="198" height="18" fontName="SansSerif" fontSize="10.0" bold="true" hTextAlign="Center">
+        <text><![CDATA[ORDEN DE SERVICIO]]></text>
+      </element>
+      <element kind="staticText" x="0" y="232" width="198" height="18" fontName="SansSerif" fontSize="10.0" bold="true" hTextAlign="Center">
+        <text><![CDATA[EQUIPO]]></text>
+      </element>
+      <element kind="staticText" x="0" y="344" width="198" height="18" fontName="SansSerif" fontSize="10.0" bold="true" hTextAlign="Center">
+        <text><![CDATA[FALLA / OBSERVACIONES]]></text>
+      </element>
+      <element kind="staticText" x="0" y="468" width="198" height="18" fontName="SansSerif" fontSize="10.0" bold="true" hTextAlign="Center">
+        <text><![CDATA[CONDICIONES]]></text>
+      </element>
+      <element kind="textField" x="0" y="0" width="198" height="20" fontName="SansSerif" fontSize="14.0" textAdjust="StretchHeight">
+        <expression><![CDATA[$P{empresa}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="22" width="198" height="20" fontName="SansSerif" fontSize="10.0" textAdjust="StretchHeight">
+        <expression><![CDATA[$P{propietario}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="42" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["RFC: " + $P{rfc}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="62" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA[$P{direccion}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="90" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Tel?fono: " + $P{telefono}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="140" width="198" height="20" fontName="SansSerif" fontSize="10.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Folio: " + $P{folio}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="162" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Fecha: " + $P{fechaHora}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="184" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Cliente: " + $P{nombreCliente}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="206" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Tel?fono cliente: " + $P{contactoCliente}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="252" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Tipo de equipo: " + $P{tipoEquipo}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="274" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Marca: " + $P{marca}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="296" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Modelo: " + $P{modelo}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="318" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["No. de serie: " + $P{numeroSerie}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="365" width="198" height="90" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA[$P{observaciones}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="490" width="198" height="90" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA[$P{condiciones}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="650" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Recibi?: " + $P{vendedor}]]></expression>
+      </element>
+      <element kind="textField" x="0" y="672" width="198" height="20" fontName="SansSerif" fontSize="9.0" textAdjust="StretchHeight">
+        <expression><![CDATA["Conformidad: " + $P{conformidad}]]></expression>
+      </element>
+    </band>
+  </detail>
+</jasperReport>
