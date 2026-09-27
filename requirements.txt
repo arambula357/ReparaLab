@@ -1,4 +1,4 @@
-# ReparaLab requirements (v1.0.0 candidate; Java project, not installed with pip)
+# ReparaLab requirements (v1.0.0; Java project, not installed with pip)
 JDK 25 or later (Temurin 25 in CI)
 Apache Maven 3.9.12 or later (to build and package)
 MySQL Server 8.x (for the local demo)

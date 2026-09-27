@@ -1,6 +1,6 @@
 # Java 25 upgrade
 
-ReparaLab compiles with `maven.compiler.release=25` and requires JDK 25 to run. The GitHub Actions workflow runs `mvn -B clean verify` with Temurin 25. No Java source code or production dependencies were changed as part of this upgrade.
+ReparaLab compiles with `maven.compiler.release=25` and requires JDK 25 to run. At the time of this upgrade, GitHub Actions ran `mvn -B clean verify` with Temurin 25. No Java source code or production dependencies were changed as part of this upgrade. The current CI also builds the release package.
 
 ## Validation at the time of the upgrade
 

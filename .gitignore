@@ -35,3 +35,6 @@ hs_err_pid*
 *.jasper
 *.sql.gz
 *.dump
+
+# Python release helper cache
+__pycache__/

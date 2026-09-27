@@ -1,31 +1,41 @@
 # Release v1.0.0 - ReparaLab
 
-Status: draft; not published.
-Planned base: `main`, after validating and integrating `develop`.
+Date: 2026-09-27
+Base: `main` (validated on `develop`)
 
 ## Summary
 
-First ReparaLab portfolio edition, based on the existing features and presented as a starting point that can be adapted for a mobile device repair shop. The original private project's history is not part of this repository.
+The first official ReparaLab portfolio release offers the existing desktop repair-shop features as a starting point for independent adaptations. The original private project's history is not part of this repository.
 
 ## Included scope
 
 - Customer, device, user, product, service, sale, and cash closing management according to role.
 - Service order and other PDF document generation.
-- Local MySQL demo with fictional data.
-- Java 25 build, automated tests, and adaptation documentation.
+- Local MySQL demo with fictional data and environment-based database configuration.
+- Java 25 build, automated CI, and six tests for passwords and service orders.
+- The in-app update check and `version.txt` were removed; the version information dialog remains.
 
 ## Using the template
 
-Before using it for a business, replace demo data, set up a database and credentials, review receipt text, terms, images, and printing flows, and validate the forms with realistic test data. See the README for the procedure.
+Create your own repository from the ReparaLab template or fork it to adapt the software for a business. Replace demo data and credentials, review receipt text and terms, and test the GUI, database, PDF, and printing flows with realistic sample data. These adaptations do not need to be submitted to the ReparaLab repository. See the README and CONTRIBUTING.md.
+
+## Requirements and setup
+
+- JDK 25 or later, Maven 3.9.12 or later for source builds, and MySQL 8 for the local demo.
+- Set `APP_DB_URL`, `APP_DB_USER`, and `APP_DB_PASSWORD` before launching.
+- See [README.md](../../README.md) and [requirements.txt](../../requirements.txt).
 
 ## Artifacts
 
-To be defined after the packaging workflow is implemented and the required license texts and notices are assembled.
+- `ReparaLab-1.0.0.zip`: application JAR, source code and Maven build file, 36 runtime libraries, images, reports, demo schema, documentation, and license notices.
+- `ReparaLab-1.0.0.sha256`: SHA-256 checksum of the ZIP.
 
 ## Validation
 
-`mvn -B clean verify` ran on `develop` with Java 25: six tests passed. MySQL interaction, Swing windows, and printers require manual validation.
+- `mvn -B clean install`: six tests passed with Java 25. The release workflow rebuilds and runs the same command from the `v1.0.0` tag.
+- The ZIP was inspected for all 36 runtime libraries and its required resources and notices.
+- MySQL interaction, Swing windows, and printers still require manual validation in a local environment.
 
 ## Licenses and attribution
 
-See [LICENSE](../../LICENSE) and [THIRD-PARTY-NOTICES.md](../../THIRD-PARTY-NOTICES.md). This edition uses AGPLv3 for original code and iText 5. Include the applicable third-party license texts and notices in any distributed package.
+Original code and iText 5 are covered by [AGPLv3](../../LICENSE). See [THIRD-PARTY-NOTICES.md](../../THIRD-PARTY-NOTICES.md) for the other libraries. The ZIP includes copies of license and notice files from the runtime JARs, plus separate BSD-3-Clause texts for protobuf-java and Adobe XMPCore, whose JARs lack a license file.

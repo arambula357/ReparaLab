@@ -59,7 +59,7 @@ public class InfoVersion extends javax.swing.JDialog {
 
         jLabel_NumeroVersionActual.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel_NumeroVersionActual.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_NumeroVersionActual.setText("3.0.0");
+        jLabel_NumeroVersionActual.setText("1.0.0");
         getContentPane().add(jLabel_NumeroVersionActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 50, 30));
 
         getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 110));

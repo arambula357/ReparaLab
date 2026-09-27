@@ -19,4 +19,6 @@ jobs:
           java-version: ${{ matrix.java }}
           cache: maven
       - name: Build and test
-        run: mvn -B clean verify
+        run: mvn -B clean install
+      - name: Verify release package
+        run: python3 scripts/package_release.py

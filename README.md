@@ -51,11 +51,15 @@ You need JDK 25 or later, Maven 3.9.12 or later, and a local MySQL 8 instance. T
 3. From the repository root, run:
 
        mvn clean install
-       java -jar target/ReparaLab-3.0.0.jar
+       java -jar target/ReparaLab-1.0.0.jar
 
 Launch from the repository root so the application can find `images/` and `reports/`. The `install` command copies dependencies to `target/lib/`. The application does not include a MySQL server or create the database automatically.
 
 Sample accounts: `admin`, `capturista`, and `tecnico`. Each uses the password `demo1234`. These are fictional local accounts; change or remove them if you reuse the schema.
+
+## Downloaded release package
+
+The `v1.0.0` GitHub release includes `ReparaLab-1.0.0.zip` and its SHA-256 checksum. Extract the ZIP, configure MySQL as above, open a terminal in the extracted `ReparaLab-1.0.0` directory, and run `java -jar ReparaLab-1.0.0.jar`. Keep `lib/`, `images/`, and `reports/` next to the JAR. The package includes the project source, Maven build file, demo schema, and third-party license texts and notices. It does not install or configure MySQL.
 
 ## Project layout
 
@@ -78,10 +82,10 @@ Diego Arambula.
 
 ## License and release status
 
-The repository is **private**, and no v1.0.0 release has been published. This revision uses [AGPLv3](LICENSE). Under its terms, others may use, copy, modify, and redistribute ReparaLab while meeting the license conditions. They can create a fork or a separate project from the template and adapt it for their own repair shop. Contributions to this repository are optional and are merged only if its maintainer accepts them.
+The repository is **private**. Version 1.0.0 uses [AGPLv3](LICENSE). Under its terms, others may use, copy, modify, and redistribute ReparaLab while meeting the license conditions. They can create a fork or a separate project from the template and adapt it for their own repair shop. Contributions to this repository are optional and are merged only if its maintainer accepts them.
 
 A GitHub template starts a new repository with its own history; a fork remains connected to the original repository. Neither route gives others write access to this repository. The license cannot require users to customize the software before using it, and a public repository cannot prevent cloning or forking. Keep the copyright and license notices when distributing copies or adaptations.
 
 The AGPL choice supports use of iText 5 under its open-source terms. MySQL Connector/J is licensed separately under GPLv2 with the Universal FOSS Exception; its notices and the terms of every bundled library must still be preserved. See the [third-party inventory](THIRD-PARTY-NOTICES.md). Before releasing a package, validate the combined distribution and include the required license texts.
 
-The first version is described as a draft in [CHANGELOG.md](CHANGELOG.md) and the [v1.0.0 release notes](docs/releases/RELEASE-v1.0.0.md). The [release notes template](docs/releases/TEMPLATE.md) guides future releases.
+Version 1.0.0 is described in [CHANGELOG.md](CHANGELOG.md) and the [release notes](docs/releases/RELEASE-v1.0.0.md). The [release notes template](docs/releases/TEMPLATE.md) guides future releases.
