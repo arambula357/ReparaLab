@@ -82,7 +82,7 @@ Diego Arambula.
 
 ## License and release status
 
-The repository is **private**. Version 1.0.0 uses [AGPLv3](LICENSE). Under its terms, others may use, copy, modify, and redistribute ReparaLab while meeting the license conditions. They can create a fork or a separate project from the template and adapt it for their own repair shop. Contributions to this repository are optional and are merged only if its maintainer accepts them.
+ReparaLab is provided as a GitHub template. Version 1.0.0 uses [AGPLv3](LICENSE). Under its terms, others may use, copy, modify, and redistribute ReparaLab while meeting the license conditions. They can create a fork or a separate project from the template and adapt it for their own repair shop. Contributions to this repository are optional and are merged only if its maintainer accepts them.
 
 A GitHub template starts a new repository with its own history; a fork remains connected to the original repository. Neither route gives others write access to this repository. The license cannot require users to customize the software before using it, and a public repository cannot prevent cloning or forking. Keep the copyright and license notices when distributing copies or adaptations.
 
