@@ -1,20 +1,20 @@
-# Historial de cambios
+# Changelog
 
-Este historial comienza con la versión de portafolio ReparaLab. No reproduce los commits del repositorio privado original.
+This changelog begins with the ReparaLab portfolio edition. It does not reproduce commits from the original private repository.
 
-## [1.0.0] — preparada, sin publicar
+## [1.0.0] - prepared, not published
 
-### Incluido
+### Included
 
-- Versión genérica de la aplicación de escritorio para recepción y seguimiento de reparaciones, clientes, usuarios, inventario, ventas y cortes.
-- Esquema MySQL de demostración con datos ficticios y configuración de conexión mediante variables de entorno.
-- Actualización del proyecto a Java 25 y Maven; compilación automatizada y pruebas de contraseñas y de la orden de servicio.
-- Compatibilidad de la orden de servicio con JasperReports 7 y correcciones del llenado y la disposición del formulario.
-- Identidad ReparaLab sin marca, credenciales ni datos del negocio original.
-- Inventario de licencias de terceros, requisitos y documentación de adaptación.
+- Generic desktop application for repair intake and tracking, customers, users, inventory, sales, and cash closing.
+- Sample MySQL schema with fictional data and database connection settings supplied through environment variables.
+- Upgrade to Java 25 and Maven, automated builds, and tests for passwords and service orders.
+- JasperReports 7 compatibility and fixes to service order data and layout.
+- ReparaLab identity without branding, credentials, or data from the original business.
+- Third-party license inventory, requirements, and adaptation instructions.
 
-### Pendiente antes de publicar
+### Before publication
 
-- Decidir la licencia del código y sustituir las dependencias incompatibles con los permisos deseados.
-- Alinear la versión de Maven y los nombres de los artefactos con `1.0.0`.
-- Integrar la rama validada, generar el paquete, crear el tag y publicar el release con sus avisos.
+- Decide the license for the original code and replace dependencies incompatible with the intended permissions.
+- Align the Maven version and artifact names with `1.0.0`.
+- Integrate the validated branch, build the package, create the tag, and publish the release with its notices.

@@ -1,85 +1,85 @@
 # ReparaLab
 
-![Identidad visual de ReparaLab](images/logo.png)
+![ReparaLab visual identity](images/logo.png)
 
-Aplicación de escritorio para gestionar la operación de un taller de reparación de dispositivos móviles. Es una versión de portafolio derivada de una herramienta que desarrollé durante mis primeros años de aprendizaje de Java y que se usó en un negocio real. El nombre, los gráficos, la conexión y los datos del negocio no forman parte de esta publicación.
+Desktop application for managing a mobile device repair shop. This portfolio edition is based on a tool I built while learning Java and that was used by a real business. The business name, branding, database connection, and customer data are not part of this repository.
 
-## Funciones existentes
+## Existing features
 
-| Rol | Trabajo principal |
+| Role | Main responsibilities |
 | --- | --- |
-| Administrador | Usuarios, clientes, equipos, artículos, ventas, información de tickets y cortes |
-| Capturista | Recepción de equipos, clientes, ventas, turnos y cortes |
-| Técnico | Consulta y seguimiento del estado de los equipos |
+| Administrator | Users, customers, devices, products, sales, receipt information, and cash closing |
+| Data entry clerk | Device intake, customers, sales, shifts, and cash closing |
+| Technician | Review and update device repair status |
 
-La aplicación también genera órdenes de servicio, tickets y PDF. No se añadieron módulos nuevos para esta versión.
+The application also generates service orders, receipts, and PDFs. This edition does not add new modules.
 
-## Tecnología
+## Technology
 
-- Java 25 como nivel de compilación y Swing con formularios de NetBeans
-- [Alcance y validación de la migración a Java 25](docs/java-25-upgrade.md)
+- Java 25 compilation target and Swing forms built with NetBeans
+- [Scope and validation of the Java 25 upgrade](docs/java-25-upgrade.md)
 - Maven
 - MySQL Connector/J 8.4
-- JasperReports 7.0.8 para órdenes de servicio
-- iText 5.5 para PDF
+- JasperReports 7.0.8 for service orders
+- iText 5.5 for PDFs
 
-La plantilla JRXML se adaptó a JasperReports 7 para incorporar la corrección de seguridad de esa serie.
+The JRXML template was adapted to JasperReports 7 to use the security fixes in that series.
 
-## Adaptar ReparaLab a un taller
+## Adapt ReparaLab for a repair shop
 
-ReparaLab se conserva como base de las funciones existentes. Para adaptarlo a otro negocio:
+ReparaLab preserves its existing feature set as a starting point. To adapt it to another business:
 
-1. Crea una base de datos propia a partir de `database/demo.sql`. Sustituye los usuarios y datos ficticios. No publiques una copia con datos de clientes ni contraseñas reales.
-2. Configura `APP_DB_URL`, `APP_DB_USER` y `APP_DB_PASSWORD` en el equipo de ejecución. Comprueba que el usuario de MySQL tenga únicamente los permisos necesarios.
-3. Revisa los datos del negocio, las condiciones de recepción y los textos de los documentos generados. Sustituye las imágenes genéricas por recursos propios si corresponde.
-4. Comprueba localmente cada rol y los flujos de alta, consulta, orden de servicio, venta, PDF e impresión con datos de prueba.
-5. Consulta [requirements.txt](requirements.txt), [avisos de terceros](THIRD-PARTY-NOTICES.md) y la sección de licencia antes de distribuir una adaptación.
+1. Create your own database using `database/demo.sql` as a starting point. Replace the sample users and data. Do not publish customer data or real passwords.
+2. Set `APP_DB_URL`, `APP_DB_USER`, and `APP_DB_PASSWORD` on the machine running the application. Give the MySQL user only the permissions it needs.
+3. Review the business details, intake terms, and text in generated documents. Replace the generic images with your own assets if appropriate.
+4. Test every role and the create, lookup, service order, sale, PDF, and printing flows locally with sample data.
+5. Review [requirements.txt](requirements.txt), the [third-party notices](THIRD-PARTY-NOTICES.md), and the license section before distributing an adaptation.
 
-La aplicación usa rutas relativas para `images/` y `reports/`; conserva estos directorios junto al ejecutable y ejecútalo desde su raíz. La plantilla de GitHub conserva el contenido del repositorio y crea un historial nuevo; no sustituye la configuración del negocio ni concede permisos de uso adicionales.
+The application uses relative paths for `images/` and `reports/`. Keep these directories alongside the application and launch it from the project root. A GitHub template preserves the repository contents and starts a new history; it does not configure a business deployment or grant additional usage rights.
 
-## Ejecutar una demostración local
+## Run a local demo
 
-Requiere JDK 25 o posterior, Maven 3.9.12 o posterior y una instancia local de MySQL 8. El esquema de database/demo.sql fue reconstruido a partir del código para esta demostración y contiene solamente datos ficticios.
+You need JDK 25 or later, Maven 3.9.12 or later, and a local MySQL 8 instance. The schema in `database/demo.sql` was reconstructed from the code for this demo and contains only fictional data.
 
-1. Importa database/demo.sql en MySQL. Crea un usuario local con permisos sobre reparalab_demo.
-2. Configura las variables de entorno de la aplicación. Por ejemplo, en PowerShell:
+1. Import `database/demo.sql` into MySQL. Create a local user with access to `reparalab_demo`.
+2. Set the application environment variables. For example, in PowerShell:
 
        $env:APP_DB_URL = 'jdbc:mysql://localhost:3306/reparalab_demo'
-       $env:APP_DB_USER = '<usuario_local>'
-       $env:APP_DB_PASSWORD = '<contraseña_local>'
+       $env:APP_DB_USER = '<local_user>'
+       $env:APP_DB_PASSWORD = '<local_password>'
 
-3. Desde la raíz del repositorio, ejecuta:
+3. From the repository root, run:
 
        mvn clean install
        java -jar target/ReparaLab-3.0.0.jar
 
-El proceso debe iniciarse desde la raíz para encontrar los directorios images/ y reports/. El comando install copia las dependencias a target/lib/. La aplicación no incluye un servidor MySQL ni crea automáticamente la base de datos.
+Launch from the repository root so the application can find `images/` and `reports/`. The `install` command copies dependencies to `target/lib/`. The application does not include a MySQL server or create the database automatically.
 
-Cuentas de ejemplo: admin, capturista y tecnico. Cada una usa la contraseña demo1234. Son cuentas ficticias para uso local; cambia o elimina estas credenciales si reutilizas el esquema.
+Sample accounts: `admin`, `capturista`, and `tecnico`. Each uses the password `demo1234`. These are fictional local accounts; change or remove them if you reuse the schema.
 
-## Organización
+## Project layout
 
-- src/main/java/gui: ventanas y diálogos Swing
-- src/main/java/com/bd: acceso a MySQL
-- src/main/java/com/construir y com/eventos: tablas e interacción
-- src/main/java/com/cortes y com/Ticket*: cierres y comprobantes
-- reports: plantilla fuente JRXML
-- database: esquema y usuarios de ejemplo
+- `src/main/java/gui`: Swing windows and dialogs
+- `src/main/java/com/bd`: MySQL access
+- `src/main/java/com/construir` and `com/eventos`: tables and interaction
+- `src/main/java/com/cortes` and `com/Ticket*`: cash closing and receipts
+- `reports`: JRXML source template
+- `database`: sample schema and users
 
-## Alcance y límites
+## Scope and limitations
 
-Esta copia no incluye historial del repositorio privado, credenciales de la instalación original, datos de clientes ni imágenes del negocio. Las contraseñas de nuevas cuentas se guardan con PBKDF2 y las consultas directas y filtros de búsqueda usan parámetros. La integración de escritorio con MySQL e impresoras requiere validación manual en un entorno local; el CI verifica compilación y pruebas automatizadas de contraseñas y de la orden de servicio.
+This repository does not include the private project's history, credentials from the original installation, customer data, or business images. New account passwords are stored with PBKDF2, and direct queries and search filters use parameters. Desktop integration with MySQL and printers needs manual validation in a local environment. CI checks compilation and automated tests for passwords and service orders.
 
-El diseño original conserva decisiones de una aplicación temprana, como SQL en componentes de interfaz y rutas de archivos relativas. Se documentan para presentar el trabajo con precisión, sin atribuirle una arquitectura que no tiene.
+The original design retains early application decisions, including SQL in UI components and relative file paths. These are documented so the portfolio description reflects the code as it is.
 
-## Autor
+## Author
 
 Diego Arambula.
 
-## Licencia y estado de publicación
+## License and release status
 
-El repositorio está **privado** y no hay un release v1.0.0 publicado. El código de esta revisión conserva la [AGPLv3](LICENSE), que se eligió para distribuirlo con iText 5. Esa licencia permite copiar, modificar y redistribuir bajo sus condiciones; no cumple el objetivo de impedir que terceros usen la aplicación sin adaptarla. Además, cambiar la licencia de una versión posterior no retira los permisos ya concedidos sobre copias anteriores.
+The repository is **private**, and no v1.0.0 release has been published. This revision retains [AGPLv3](LICENSE), selected to distribute the application with iText 5. That license permits copying, modification, and redistribution under its terms; it does not meet the goal of preventing use without adaptation. A later license change also cannot revoke permissions already granted for earlier copies.
 
-Antes de distribuir una versión con términos restrictivos hay que sustituir iText 5 y revisar el efecto de MySQL Connector/J (GPLv2 con Universal FOSS Exception) y de las demás dependencias. La licencia de las bibliotecas no cambia al modificar la licencia del código propio. Consulta el [inventario de terceros](THIRD-PARTY-NOTICES.md). Este repositorio no es una oferta de licencia comercial ni un paquete listo para distribuir bajo términos restrictivos.
+Before distributing a version under restrictive terms, iText 5 must be replaced. The effect of MySQL Connector/J (GPLv2 with the Universal FOSS Exception) and other dependencies must also be reviewed. Changing the license for original code does not change the licenses of third-party libraries. See the [third-party inventory](THIRD-PARTY-NOTICES.md). This repository is not a commercial license offer or a package ready for distribution under restrictive terms.
 
-La primera versión está descrita como borrador en [CHANGELOG.md](CHANGELOG.md) y [notas v1.0.0](docs/releases/RELEASE-v1.0.0.md). La [plantilla de notas](docs/releases/TEMPLATE.md) guía futuros releases.
+The first version is described as a draft in [CHANGELOG.md](CHANGELOG.md) and the [v1.0.0 release notes](docs/releases/RELEASE-v1.0.0.md). The [release notes template](docs/releases/TEMPLATE.md) guides future releases.

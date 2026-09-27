@@ -1,31 +1,31 @@
-# Release v1.0.0 — ReparaLab
+# Release v1.0.0 - ReparaLab
 
-Estado: borrador; aún no publicado.
-Base prevista: `main`, tras validar e integrar `develop`.
+Status: draft; not published.
+Planned base: `main`, after validating and integrating `develop`.
 
-## Resumen
+## Summary
 
-Primera versión de portafolio de ReparaLab, derivada de la funcionalidad existente y presentada como base adaptable para un taller de reparación de dispositivos móviles. El historial del proyecto privado original no forma parte de este repositorio.
+First ReparaLab portfolio edition, based on the existing features and presented as a starting point that can be adapted for a mobile device repair shop. The original private project's history is not part of this repository.
 
-## Alcance incluido
+## Included scope
 
-- Gestión de clientes, equipos, usuarios, productos, servicios, ventas y cortes según el rol.
-- Generación de órdenes de servicio y otros documentos PDF.
-- Demostración local con MySQL y datos ficticios.
-- Compilación con Java 25, pruebas automatizadas y documentación de adaptación.
+- Customer, device, user, product, service, sale, and cash closing management according to role.
+- Service order and other PDF document generation.
+- Local MySQL demo with fictional data.
+- Java 25 build, automated tests, and adaptation documentation.
 
-## Uso de la plantilla
+## Using the template
 
-Antes de usarla en un negocio, sustituir datos de demostración, configurar una base de datos y credenciales propias, revisar textos de recibos, condiciones, imágenes y flujos de impresión, y validar los formularios con datos reales de prueba. Consultar el README para el procedimiento.
+Before using it for a business, replace demo data, set up a database and credentials, review receipt text, terms, images, and printing flows, and validate the forms with realistic test data. See the README for the procedure.
 
-## Artefactos
+## Artifacts
 
-Pendientes de definir cuando se implemente el flujo de empaquetado y se resuelva la licencia.
+To be defined after the packaging workflow is implemented and licensing is resolved.
 
-## Validación
+## Validation
 
-`mvn -B clean verify` se ejecutó en la rama `develop` con Java 25: seis pruebas correctas. La interacción con MySQL, ventanas Swing e impresoras requiere validación manual.
+`mvn -B clean verify` ran on `develop` with Java 25: six tests passed. MySQL interaction, Swing windows, and printers require manual validation.
 
-## Licencias y atribuciones
+## Licenses and attribution
 
-[LICENSE](../../LICENSE) y [THIRD-PARTY-NOTICES.md](../../THIRD-PARTY-NOTICES.md). Se debe resolver la incompatibilidad de la licencia restrictiva deseada con iText 5 antes de publicar el paquete.
+See [LICENSE](../../LICENSE) and [THIRD-PARTY-NOTICES.md](../../THIRD-PARTY-NOTICES.md). The conflict between the desired restrictive license and iText 5 must be resolved before distributing the package.

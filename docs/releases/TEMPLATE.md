@@ -1,41 +1,41 @@
-# Release vX.Y.Z — <hito>
+# Release vX.Y.Z - <milestone>
 
-Fecha: YYYY-MM-DD
-Base: `main` (cambios validados en `develop`)
+Date: YYYY-MM-DD
+Base: `main` (changes validated on `develop`)
 
-## Resumen
+## Summary
 
-<Resultado de la versión en una o dos frases.>
+<Describe the outcome of this version in one or two sentences.>
 
-## Alcance incluido
+## Included scope
 
-- <Funcionalidad o corrección verificable.>
-- <Cambios de compatibilidad y documentación.>
+- <Verifiable feature or fix.>
+- <Compatibility and documentation changes.>
 
-## Uso de la plantilla
+## Using the template
 
-- <Qué características del proyecto están listas para adaptar.>
-- <Qué datos y configuración debe sustituir cada negocio.>
-- <Limitaciones conocidas.>
+- <Which project features are ready to adapt.>
+- <Which data and configuration each business must replace.>
+- <Known limitations.>
 
-## Requisitos y ejecución
+## Requirements and setup
 
-- JDK: <versión>. Maven: <versión>. MySQL: <versión>.
-- Configuración: <variables necesarias>.
-- Instalación: <enlace al README>.
+- JDK: <version>. Maven: <version>. MySQL: <version>.
+- Configuration: <required variables>.
+- Setup: <link to README>.
 
-## Artefactos
+## Artifacts
 
-- `<archivo>.zip`: aplicación, dependencias de ejecución, recursos y avisos de terceros.
-- `<archivo>.sha256`: suma SHA-256 del paquete.
+- `<file>.zip`: application, runtime dependencies, resources, and third-party notices.
+- `<file>.sha256`: package SHA-256 checksum.
 
-## Validación
+## Validation
 
-- Comando: `<comando ejecutado>`.
-- Resultado: <pruebas y estado>.
-- Validación manual: <qué se comprobó o queda pendiente>.
+- Command: `<command run>`.
+- Result: <tests and status>.
+- Manual validation: <what was checked or remains pending>.
 
-## Licencias y atribuciones
+## Licenses and attribution
 
-- Licencia del código: <enlace a LICENSE>.
-- Dependencias: <enlace a THIRD-PARTY-NOTICES.md>.
+- Original code license: <link to LICENSE>.
+- Dependencies: <link to THIRD-PARTY-NOTICES.md>.

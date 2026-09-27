@@ -1,13 +1,13 @@
-# Requisitos de ReparaLab (candidato v1.0.0) (aplicación Java; este archivo no se instala con pip)
-JDK 25 o posterior (Temurin 25 en CI)
-Apache Maven 3.9.12 o posterior (para compilar y empaquetar)
-MySQL Server 8.x (para ejecutar la demostración local)
-Sistema de escritorio con interfaz gráfica y acceso a impresora para los flujos de impresión
+# ReparaLab requirements (v1.0.0 candidate; Java project, not installed with pip)
+JDK 25 or later (Temurin 25 in CI)
+Apache Maven 3.9.12 or later (to build and package)
+MySQL Server 8.x (for the local demo)
+Desktop environment with a graphical interface and printer access for printing flows
 
-# Configuración local requerida; los valores no deben subirse al repositorio
+# Required local configuration; do not commit real values
 APP_DB_URL=jdbc:mysql://localhost:3306/reparalab_demo
-APP_DB_USER=<usuario_local>
-APP_DB_PASSWORD=<contraseña_local>
+APP_DB_USER=<local_user>
+APP_DB_PASSWORD=<local_password>
 
-# Las bibliotecas Java y sus versiones se declaran en pom.xml.
-# Esquema de demostración: database/demo.sql
+# Java libraries and their versions are declared in pom.xml.
+# Demo schema: database/demo.sql
