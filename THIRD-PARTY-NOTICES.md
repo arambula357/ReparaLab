@@ -1,6 +1,6 @@
 # Avisos de terceros
 
-Inventario de las **36 bibliotecas de ejecuci?n** resueltas desde `pom.xml` el 27 de septiembre de 2026. Incluye dependencias directas y transitivas; las versiones pueden cambiar cuando se actualice Maven. El c?digo propio se rige por [LICENSE](LICENSE); cada biblioteca conserva su licencia.
+Inventario de las **36 bibliotecas de ejecución** resueltas desde `pom.xml` el 27 de septiembre de 2026. Incluye dependencias directas y transitivas; las versiones pueden cambiar cuando se actualice Maven. El código propio se rige por [LICENSE](LICENSE); cada biblioteca conserva su licencia.
 
 | Dependencia | Licencia declarada o incluida | Referencia |
 | --- | --- | --- |
@@ -41,11 +41,11 @@ Inventario de las **36 bibliotecas de ejecuci?n** resueltas desde `pom.xml` el 2
 | `org.netbeans.external:AbsoluteLayout:RELEASE310` | Apache-2.0 | [Proyecto](https://netbeans.apache.org/AbsoluteLayout/) |
 | `xml-apis:xml-apis-ext:1.3.04` | Apache-2.0 | [Proyecto](http://xml.apache.org/commons/components/external/) |
 
-## Alcance y distribuci?n
+## Alcance y distribución
 
-- La licencia de `openpdf:1.3.43.jaspersoft.2` no se declara en su POM. El propio JAR incluye `META-INF/LICENSES.md`, que identifica MPL-2.0 y LGPL-2.1, adem?s de c?digo bajo Apache-2.0. Esta edici?n empaquetada de Jaspersoft debe verificarse de nuevo al preparar un release.
-- `junit-jupiter:5.14.3` se usa ?nicamente en pruebas y no forma parte del paquete de ejecuci?n; se distribuye bajo EPL-2.0.
-- Esta tabla es un inventario, no sustituye los textos completos de las licencias ni los avisos de copyright que deban acompa?ar a los JAR. Antes de distribuir un ZIP, se deber?n conservar los avisos incluidos en cada biblioteca y a?adir los textos exigidos por sus licencias.
-- El uso directo de iText 5 bajo AGPL-3.0 impide ofrecer el paquete actual bajo una licencia de c?digo propia que proh?ba adaptaciones o redistribuci?n. MySQL Connector/J agrega requisitos GPL-2.0 y su excepci?n FOSS, que tambi?n deber?n evaluarse para una licencia restrictiva.
+- La licencia de `openpdf:1.3.43.jaspersoft.2` no se declara en su POM. El propio JAR incluye `META-INF/LICENSES.md`, que identifica MPL-2.0 y LGPL-2.1, además de código bajo Apache-2.0. Esta edición empaquetada de Jaspersoft debe verificarse de nuevo al preparar un release.
+- `junit-jupiter:5.14.3` se usa únicamente en pruebas y no forma parte del paquete de ejecución; se distribuye bajo EPL-2.0.
+- Esta tabla es un inventario, no sustituye los textos completos de las licencias ni los avisos de copyright que deban acompañar a los JAR. Antes de distribuir un ZIP, se deberán conservar los avisos incluidos en cada biblioteca y añadir los textos exigidos por sus licencias.
+- El uso directo de iText 5 bajo AGPL-3.0 impide ofrecer el paquete actual bajo una licencia de código propia que prohíba adaptaciones o redistribución. MySQL Connector/J agrega requisitos GPL-2.0 y su excepción FOSS, que también deberán evaluarse para una licencia restrictiva.
 
-Fuentes de referencia: [iText](https://kb.itextpdf.com/itext/i-have-been-using-itext-5-or-7-without-a-commercia), [JasperReports](https://github.com/Jaspersoft/jasperreports/blob/master/LICENSE), [MySQL Connector/J](https://github.com/mysql/mysql-connector-j), [OpenPDF](https://github.com/LibrePDF/OpenPDF/blob/master/LICENSE.md). La detecci?n se obtuvo con `mvn org.codehaus.mojo:license-maven-plugin:2.7.1:add-third-party -Dlicense.includedScopes=compile,runtime` y se contrast? el aviso incluido en el JAR de OpenPDF.
+Fuentes de referencia: [iText](https://kb.itextpdf.com/itext/i-have-been-using-itext-5-or-7-without-a-commercia), [JasperReports](https://github.com/Jaspersoft/jasperreports/blob/master/LICENSE), [MySQL Connector/J](https://github.com/mysql/mysql-connector-j), [OpenPDF](https://github.com/LibrePDF/OpenPDF/blob/master/LICENSE.md). La detección se obtuvo con `mvn org.codehaus.mojo:license-maven-plugin:2.7.1:add-third-party -Dlicense.includedScopes=compile,runtime` y se contrastó el aviso incluido en el JAR de OpenPDF.
