@@ -25,6 +25,18 @@ La aplicaci?n tambi?n genera ?rdenes de servicio, tickets y PDF. No se a?adieron
 
 La plantilla JRXML se adapt? a JasperReports 7 para incorporar la correcci?n de seguridad de esa serie.
 
+## Adaptar ReparaLab a un taller
+
+ReparaLab se conserva como base de las funciones existentes. Para adaptarlo a otro negocio:
+
+1. Crea una base de datos propia a partir de `database/demo.sql`. Sustituye los usuarios y datos ficticios. No publiques una copia con datos de clientes ni contrase?as reales.
+2. Configura `APP_DB_URL`, `APP_DB_USER` y `APP_DB_PASSWORD` en el equipo de ejecuci?n. Comprueba que el usuario de MySQL tenga ?nicamente los permisos necesarios.
+3. Revisa los datos del negocio, las condiciones de recepci?n y los textos de los documentos generados. Sustituye las im?genes gen?ricas por recursos propios si corresponde.
+4. Comprueba localmente cada rol y los flujos de alta, consulta, orden de servicio, venta, PDF e impresi?n con datos de prueba.
+5. Consulta [requirements.txt](requirements.txt), [avisos de terceros](THIRD-PARTY-NOTICES.md) y la secci?n de licencia antes de distribuir una adaptaci?n.
+
+La aplicaci?n usa rutas relativas para `images/` y `reports/`; conserva estos directorios junto al ejecutable y ejec?talo desde su ra?z. La plantilla de GitHub conserva el contenido del repositorio y crea un historial nuevo; no sustituye la configuraci?n del negocio ni concede permisos de uso adicionales.
+
 ## Ejecutar una demostraci?n local
 
 Requiere JDK 25 o posterior, Maven 3.9.12 o posterior y una instancia local de MySQL 8. El esquema de database/demo.sql fue reconstruido a partir del c?digo para esta demostraci?n y contiene solamente datos ficticios.
@@ -56,7 +68,7 @@ Cuentas de ejemplo: admin, capturista y tecnico. Cada una usa la contrase?a demo
 
 ## Alcance y l?mites
 
-Esta copia no incluye historial del repositorio privado, credenciales de la instalaci?n original, datos de clientes ni im?genes del negocio. Las contrase?as de nuevas cuentas se guardan con PBKDF2 y las consultas directas y filtros de b?squeda usan par?metros. La integraci?n de escritorio con MySQL e impresoras requiere validaci?n manual en un entorno local; el CI verifica compilaci?n y pruebas automatizadas de contrase?as.
+Esta copia no incluye historial del repositorio privado, credenciales de la instalaci?n original, datos de clientes ni im?genes del negocio. Las contrase?as de nuevas cuentas se guardan con PBKDF2 y las consultas directas y filtros de b?squeda usan par?metros. La integraci?n de escritorio con MySQL e impresoras requiere validaci?n manual en un entorno local; el CI verifica compilaci?n y pruebas automatizadas de contrase?as y de la orden de servicio.
 
 El dise?o original conserva decisiones de una aplicaci?n temprana, como SQL en componentes de interfaz y rutas de archivos relativas. Se documentan para presentar el trabajo con precisi?n, sin atribuirle una arquitectura que no tiene.
 
@@ -64,8 +76,10 @@ El dise?o original conserva decisiones de una aplicaci?n temprana, como SQL en c
 
 Diego Arambula.
 
-## Licencia
+## Licencia y estado de publicaci?n
 
-ReparaLab se distribuye bajo la GNU Affero General Public License version 3 (AGPLv3). Consulta [LICENSE](LICENSE) para el texto completo. Esta licencia permite usar iText 5 bajo su modalidad de codigo abierto, siempre que se cumplan sus condiciones al distribuir la aplicacion.
+El repositorio est? **privado** y no hay un release v1.0.0 publicado. El c?digo de esta revisi?n conserva la [AGPLv3](LICENSE), que se eligi? para distribuirlo con iText 5. Esa licencia permite copiar, modificar y redistribuir bajo sus condiciones; no cumple el objetivo de impedir que terceros usen la aplicaci?n sin adaptarla. Adem?s, cambiar la licencia de una versi?n posterior no retira los permisos ya concedidos sobre copias anteriores.
 
-Las dependencias conservan sus propias licencias y avisos. iText 5 utiliza AGPLv3; JasperReports Library declara LGPL; MySQL Connector/J 8.4.0 declara GPLv2 con Universal FOSS Exception 1.0. Si distribuyes los archivos de `target/lib/`, incluye tambien los avisos de licencia correspondientes a esas bibliotecas.
+Antes de distribuir una versi?n con t?rminos restrictivos hay que sustituir iText 5 y revisar el efecto de MySQL Connector/J (GPLv2 con Universal FOSS Exception) y de las dem?s dependencias. La licencia de las bibliotecas no cambia al modificar la licencia del c?digo propio. Consulta el [inventario de terceros](THIRD-PARTY-NOTICES.md). Este repositorio no es una oferta de licencia comercial ni un paquete listo para distribuir bajo t?rminos restrictivos.
+
+La primera versi?n est? descrita como borrador en [CHANGELOG.md](CHANGELOG.md) y [notas v1.0.0](docs/releases/RELEASE-v1.0.0.md). La [plantilla de notas](docs/releases/TEMPLATE.md) gu?a futuros releases.
