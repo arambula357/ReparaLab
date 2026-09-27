@@ -1,6 +1,6 @@
 # Release vX.Y.Z ? <hito>
 
-Fecha: YYYY-MM-DD  
+Fecha: YYYY-MM-DD
 Base: `main` (cambios validados en `develop`)
 
 ## Resumen

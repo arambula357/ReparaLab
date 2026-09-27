@@ -1,6 +1,6 @@
 # Release v1.0.0 ? ReparaLab
 
-Estado: borrador; a?n no publicado.  
+Estado: borrador; a?n no publicado.
 Base prevista: `main`, tras validar e integrar `develop`.
 
 ## Resumen
