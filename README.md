@@ -12,7 +12,7 @@ Desktop application for managing a mobile device repair shop. This portfolio edi
 | Data entry clerk | Device intake, customers, sales, shifts, and cash closing |
 | Technician | Review and update device repair status |
 
-The application also generates service orders, receipts, and PDFs. This edition does not add new modules.
+The application also generates service orders, receipts, and PDFs. This edition does not add new modules. The version dialog shows the installed version; the former in-app update check has been removed.
 
 ## Technology
 

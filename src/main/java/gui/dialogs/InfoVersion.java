@@ -1,12 +1,10 @@
 package gui.dialogs;
 
 import com.construir.Imagenes;
-import com.utilidades.Updater;
 
 import java.awt.Image;
 import java.awt.Toolkit;
 
-import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -22,13 +20,11 @@ public class InfoVersion extends javax.swing.JDialog {
 
     public InfoVersion(){
         initComponents();
-        setSize(375, 275);
+        setSize(375, 120);
         setTitle("Información de la versión");
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-
-        jButton_DescargarActualizacion.setVisible(false);
         Imagenes.setImagenFondo(jLabel_Wallpaper);
     }
 
@@ -45,9 +41,6 @@ public class InfoVersion extends javax.swing.JDialog {
         jLabel_Titulo = new javax.swing.JLabel();
         jLabel_VersionActual = new javax.swing.JLabel();
         jLabel_NumeroVersionActual = new javax.swing.JLabel();
-        jLabel_Actualizacion = new javax.swing.JLabel();
-        jButton_BuscarActualizacion = new javax.swing.JButton();
-        jButton_DescargarActualizacion = new javax.swing.JButton();
         jLabel_Wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -69,70 +62,10 @@ public class InfoVersion extends javax.swing.JDialog {
         jLabel_NumeroVersionActual.setText("3.0.0");
         getContentPane().add(jLabel_NumeroVersionActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 50, 30));
 
-        jLabel_Actualizacion.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel_Actualizacion.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Actualizacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Actualizacion.setText("Verificar actualizaciones");
-        getContentPane().add(jLabel_Actualizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 370, 30));
-
-        jButton_BuscarActualizacion.setBackground(new java.awt.Color(1, 89, 255));
-        jButton_BuscarActualizacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_BuscarActualizacion.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_BuscarActualizacion.setText("Buscar");
-        jButton_BuscarActualizacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton_BuscarActualizacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_BuscarActualizacionActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton_BuscarActualizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 120, 30));
-
-        jButton_DescargarActualizacion.setBackground(new java.awt.Color(1, 89, 255));
-        jButton_DescargarActualizacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_DescargarActualizacion.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_DescargarActualizacion.setText("Descargar");
-        jButton_DescargarActualizacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton_DescargarActualizacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_DescargarActualizacionActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton_DescargarActualizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 100, 30));
-        getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 269));
+        getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton_BuscarActualizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BuscarActualizacionActionPerformed
-
-        jLabel_Actualizacion.setText("Buscando actualización...");
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-
-                    if (Updater.ConfirmarConexion() == true) {
-                        if (Updater.ObtenerVersion().equals(versionA)) {
-                            jLabel_Actualizacion.setText("El programa esta actualizado");
-                        } else {
-                            jLabel_Actualizacion.setText("Versión " + Updater.ObtenerVersion() + " disponible");
-                            jButton_DescargarActualizacion.setVisible(true);
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "¡Error al conectar!\n Verifique su conexión a internet");
-                    }
-                } catch (InterruptedException e) {
-                    System.out.println("Error al consultar actualizaciones");
-                }
-            }
-        }).start();
-    }//GEN-LAST:event_jButton_BuscarActualizacionActionPerformed
-
-    private void jButton_DescargarActualizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DescargarActualizacionActionPerformed
-        Updater.EnlazarDescarga();
-    }//GEN-LAST:event_jButton_DescargarActualizacionActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -161,15 +94,9 @@ public class InfoVersion extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_BuscarActualizacion;
-    private javax.swing.JButton jButton_DescargarActualizacion;
-    private javax.swing.JLabel jLabel_Actualizacion;
     private javax.swing.JLabel jLabel_NumeroVersionActual;
     private javax.swing.JLabel jLabel_Titulo;
     private javax.swing.JLabel jLabel_VersionActual;
     private javax.swing.JLabel jLabel_Wallpaper;
     // End of variables declaration//GEN-END:variables
-
-    /*Declaración de objetos y variables de clase*/
-    private String versionA;
 }

@@ -12,6 +12,7 @@ This changelog begins with the ReparaLab portfolio edition. It does not reproduc
 - JasperReports 7 compatibility and fixes to service order data and layout.
 - ReparaLab identity without branding, credentials, or data from the original business.
 - Third-party license inventory, requirements, and adaptation instructions.
+- Removed the former `version.txt` update check; the version information dialog remains available.
 
 ### Before publication
 
