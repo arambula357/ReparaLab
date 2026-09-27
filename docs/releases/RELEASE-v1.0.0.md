@@ -20,7 +20,7 @@ Before using it for a business, replace demo data, set up a database and credent
 
 ## Artifacts
 
-To be defined after the packaging workflow is implemented and licensing is resolved.
+To be defined after the packaging workflow is implemented and the required license texts and notices are assembled.
 
 ## Validation
 
@@ -28,4 +28,4 @@ To be defined after the packaging workflow is implemented and licensing is resol
 
 ## Licenses and attribution
 
-See [LICENSE](../../LICENSE) and [THIRD-PARTY-NOTICES.md](../../THIRD-PARTY-NOTICES.md). The conflict between the desired restrictive license and iText 5 must be resolved before distributing the package.
+See [LICENSE](../../LICENSE) and [THIRD-PARTY-NOTICES.md](../../THIRD-PARTY-NOTICES.md). This edition uses AGPLv3 for original code and iText 5. Include the applicable third-party license texts and notices in any distributed package.

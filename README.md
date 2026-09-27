@@ -35,7 +35,7 @@ ReparaLab preserves its existing feature set as a starting point. To adapt it to
 4. Test every role and the create, lookup, service order, sale, PDF, and printing flows locally with sample data.
 5. Review [requirements.txt](requirements.txt), the [third-party notices](THIRD-PARTY-NOTICES.md), and the license section before distributing an adaptation.
 
-The application uses relative paths for `images/` and `reports/`. Keep these directories alongside the application and launch it from the project root. A GitHub template preserves the repository contents and starts a new history; it does not configure a business deployment or grant additional usage rights.
+The application uses relative paths for `images/` and `reports/`. Keep these directories alongside the application and launch it from the project root. A GitHub template preserves the repository contents and starts a new history; it does not configure a business deployment or grant additional usage rights. See [CONTRIBUTING.md](CONTRIBUTING.md) for the policy on independent adaptations.
 
 ## Run a local demo
 
@@ -78,8 +78,10 @@ Diego Arambula.
 
 ## License and release status
 
-The repository is **private**, and no v1.0.0 release has been published. This revision retains [AGPLv3](LICENSE), selected to distribute the application with iText 5. That license permits copying, modification, and redistribution under its terms; it does not meet the goal of preventing use without adaptation. A later license change also cannot revoke permissions already granted for earlier copies.
+The repository is **private**, and no v1.0.0 release has been published. This revision uses [AGPLv3](LICENSE). Under its terms, others may use, copy, modify, and redistribute ReparaLab while meeting the license conditions. They can create a fork or a separate project from the template and adapt it for their own repair shop. Contributions to this repository are optional and are merged only if its maintainer accepts them.
 
-Before distributing a version under restrictive terms, iText 5 must be replaced. The effect of MySQL Connector/J (GPLv2 with the Universal FOSS Exception) and other dependencies must also be reviewed. Changing the license for original code does not change the licenses of third-party libraries. See the [third-party inventory](THIRD-PARTY-NOTICES.md). This repository is not a commercial license offer or a package ready for distribution under restrictive terms.
+A GitHub template starts a new repository with its own history; a fork remains connected to the original repository. Neither route gives others write access to this repository. The license cannot require users to customize the software before using it, and a public repository cannot prevent cloning or forking. Keep the copyright and license notices when distributing copies or adaptations.
+
+The AGPL choice supports use of iText 5 under its open-source terms. MySQL Connector/J is licensed separately under GPLv2 with the Universal FOSS Exception; its notices and the terms of every bundled library must still be preserved. See the [third-party inventory](THIRD-PARTY-NOTICES.md). Before releasing a package, validate the combined distribution and include the required license texts.
 
 The first version is described as a draft in [CHANGELOG.md](CHANGELOG.md) and the [v1.0.0 release notes](docs/releases/RELEASE-v1.0.0.md). The [release notes template](docs/releases/TEMPLATE.md) guides future releases.

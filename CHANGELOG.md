@@ -15,6 +15,6 @@ This changelog begins with the ReparaLab portfolio edition. It does not reproduc
 
 ### Before publication
 
-- Decide the license for the original code and replace dependencies incompatible with the intended permissions.
+- Confirm the AGPL distribution requirements and include the complete third-party license texts and notices in the package.
 - Align the Maven version and artifact names with `1.0.0`.
-- Integrate the validated branch, build the package, create the tag, and publish the release with its notices.
+- Integrate the validated branch, enable the repository template, build the package, create the tag, and publish the release with its notices.
